@@ -2,7 +2,7 @@
 
 これは Docker Hub の Official Image をベースとする PHP 用の開発環境を Dev Container 環境として用意したものです。
 
-PHP は [php](https://hub.docker.com/_/php) の `php:7.4-apache`、DB サーバーは [mysql](https://hub.docker.com/_/mysql) の `mysql:5.7` を使っています。
+PHP は [php](https://hub.docker.com/_/php) の `php:8.1-apache`、DB サーバーは [mysql](https://hub.docker.com/_/mysql) の `mysql:8.0.32-debian` を使っています。
 また、DB サーバーのデータ操作用に [adminer](https://hub.docker.com/_/adminer) の `adminer:4.8.1-standalone` も使えるようにしています。
 開発するアプリは devcon-php コンテナーの `/var/www/html` （つまり、`devcon-php:/var/www/html`）へ置くことを想定しています。
 

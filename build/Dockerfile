@@ -1,11 +1,11 @@
-FROM php:7.4-apache
+FROM php:8.1-apache
 
 ARG USER_NAME=www-data
 ARG USER_UID=1000
 ARG USER_GID=1000
 
 RUN apt-get update && apt-get install -y libonig-dev git bash-completion sudo \
-    && pecl install xdebug-3.1.6 \
+    && pecl install xdebug-3.2.0 \
     && docker-php-ext-install pdo_mysql mysqli mbstring \
     && docker-php-ext-enable xdebug \
     && usermod -u ${USER_UID} ${USER_NAME} \

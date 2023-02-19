@@ -1,7 +1,7 @@
 name: devcon-php
 services:
   devcon-php:
-    image: devcon-php:0.1
+    image: devcon-php81:0.1
     container_name: devcon-php
     hostname: devcon-php
     tty: true
@@ -16,7 +16,7 @@ services:
       - ${LOCAL_WORKSPACE_FOLDER:-.}/workspace/share/:/workspace/share/
 
   devcon-php-mysql:
-    image: mysql:5.7
+    image: mysql:8.0.32-debian
     container_name: devcon-php-mysql
     hostname: devcon-php-mysql
     volumes:
