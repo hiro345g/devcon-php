@@ -1,0 +1,38 @@
+{
+    "name": "devcon-php",
+    "dockerComposeFile": [
+        "../docker-compose.yml"
+    ],
+    "service": "devcon-php",
+	"remoteUser": "www-data",
+    "shutdownAction": "none",
+    "workspaceFolder": "/var/www",
+    "remoteEnv": {
+        "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "xdebug.php-debug",
+                "bmewburn.vscode-intelephense-client",
+                "neilbrayfield.php-docblocker",
+                "recca0120.vscode-phpunit",
+                "esbenp.prettier-vscode",
+                "oderwat.indent-rainbow",
+                "eamodio.gitlens",
+                "donjayamanne.githistory",
+                "mhutchie.git-graph",
+                "mikestead.dotenv",
+                "EditorConfig.EditorConfig"
+            ],
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "editor.formatOnSave": true,
+                "editor.tabSize": 4,
+                "editor.detectIndentation": false,
+                "editor.insertSpaces": true,
+                "editor.defaultFormatter": "esbenp.prettier-vscode"
+            }
+        }
+    }
+}

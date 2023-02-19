@@ -1,0 +1,47 @@
+name: devcon-php
+services:
+  devcon-php:
+    image: devcon-php:0.1
+    container_name: devcon-php
+    hostname: devcon-php
+    tty: true
+    user: ${USER_UID:-1000}:${USER_GID:-1000}
+    ports:
+      - ${PHP_PORT:-8080}:80
+      - ${PHP_BUILT_IN_PORT:-10080}:10080
+    volumes:
+      - devcon-php-data:/var/www
+      - devcon-php-vscode-server-extensions:/var/www/.vscode-server/extensions
+      - ${LOCAL_WORKSPACE_FOLDER:-.}/workspace/usr_local_etc_php/php.ini:/usr/local/etc/php/php.ini
+      - ${LOCAL_WORKSPACE_FOLDER:-.}/workspace/share/:/workspace/share/
+
+  devcon-php-mysql:
+    image: mysql:5.7
+    container_name: devcon-php-mysql
+    hostname: devcon-php-mysql
+    volumes:
+      - devcon-php-mysql-data:/var/lib/mysql
+    ports:
+      - ${MYSQL_PORT:-13306}:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-devcon-phppass001}
+      - MYSQL_DATABASE=${MYSQL_DATABASE:-devcon-php}
+      - MYSQL_USER=${MYSQL_USER:-devcon-php}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD:-devcon-phppass001}
+
+  devcon-php-adminer:
+    image: adminer:4.8.1-standalone
+    container_name: devcon-php-adminer
+    hostname: devcon-php-adminer
+    ports:
+      - ${ADMINER_PORT:-5080}:8080
+    environment:
+      ADMINER_DEFAULT_SERVER: devcon-php-mysql
+
+volumes:
+  devcon-php-data:
+    name: devcon-php-data
+  devcon-php-vscode-server-extensions:
+    name: devcon-php-vscode-server-extensions
+  devcon-php-mysql-data:
+    name: devcon-php-mysql-data
