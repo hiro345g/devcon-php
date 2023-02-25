@@ -202,9 +202,9 @@ Launch currently open script を使うと、エディタで開いている PHP �
 
 ### Launch Built-in web server
 
-Launch Built-in web server を使うと `php -S 0.0.0.0:10080` を実行して、PHP ビルトインの Web サーバーを使ってデバッグすることができます。いまのところ、Web ブラウザからアクセスしても受け付けませんが、ターミナルからのアクセスだとデバッグが動きます。
+Launch Built-in web server を使うと `php -S 0.0.0.0:10080` を実行して、PHP ビルトインの Web サーバーを使ってデバッグすることができます。
 
-コンテナー内、Docker ホストで下記でアクセスできます。
+例えば `curl` コマンドを使って、コンテナー内、Docker ホストのターミナルからアクセスするには次のようにします。
 
 ```console
 curl http://localhost:10080/
