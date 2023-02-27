@@ -177,7 +177,7 @@ www-data@devcon-php:~$ code /var/www/html.code-workspace
 - Launch currently open script
 - Launch Built-in web server
 
-動作しない場合は `./workspace/user_local_etc_php/php.ini` の `xdebug.client_host` を見直してください。
+動作しない場合は `${REPO_DIR}/workspace/user_local_etc_php/php.ini` の `xdebug.client_host` を見直してください。
 
 ### Listen for Xdebug
 
