@@ -256,7 +256,7 @@ docker compose -f build/docker-compose.yml down
 特にポート番号の衝突を避ける必要がある場合に利用してください。
 
 Listen for Xdebug で使うポート番号は `PHP_PORT`、Launch Built-in web server で使うポート番号は `PHP_BUILT_IN_PORT` で変更可能です。
-これらを変更した場合は、``${REPO_DIR}/workspace/share/html.code-workspace` の対応する `port:` の変更も必要です。
+これらを変更した場合は、`${REPO_DIR}/workspace/share/html.code-workspace` の対応する `port:` の変更も必要です。
 
 `MYSQL_` で始まるものは devcon-php-mysql サービス用です。MySQL が使うポート番号は `MYSQL_PORT` で指定できます。
 
